@@ -17,11 +17,9 @@ export default function Home() {
 
   useEffect(() => {
     setUser(session?.data?.user);
-    console.log(user);
   }, [session]);
 
   useEffect(() => {
-    console.log(search);
     if (search.length >= 1)
       return setImages(
         image.filter((item) => item.tag.includes(search.toLowerCase()))
@@ -42,8 +40,6 @@ export default function Home() {
 
   function handleDragEnd(event) {
     const { active, over } = event;
-    console.log("active:", active);
-    console.log("over:", over);
 
     const dragIndex = user && active.data.current.index;
     const hoverIndex = user && over.data.current.index;

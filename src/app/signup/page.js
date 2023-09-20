@@ -28,7 +28,6 @@ export default function SignUp() {
       });
       response.status === 201 &&
         router.push("/?success= HNG Account has been created");
-      console.log(email, password);
     } catch (err) {
       setError(err.message);
     }

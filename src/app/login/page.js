@@ -14,14 +14,11 @@ export default function Login() {
 
   async function LoginWithCredentials(e) {
     e.preventDefault();
-    console.log({ email, password });
     const login = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
-    // // console.log(session);
-    console.log("login", login);
     if (login.error) {
       toast.error(login.error);
     }
